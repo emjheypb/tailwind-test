@@ -1,6 +1,7 @@
 "use client";
 import Logo from "@/components/Logo";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -27,6 +28,7 @@ const links = [
 ];
 
 const StickyNavbar = () => {
+  const pathname = usePathname();
   const [isSticky, setSticky] = useState(false);
   // const [y, setY] = useState(0);
 
@@ -55,7 +57,12 @@ const StickyNavbar = () => {
         }}>
         <Logo />
         {links.map((link) => (
-          <Link href={link.href} key={link.id} className={`p-4`}>
+          <Link
+            href={link.href}
+            key={link.id}
+            className={`p-4 hover:font-bold ${
+              pathname === link.href && "font-extrabold"
+            }`}>
             <span>{link.name}</span>
           </Link>
         ))}

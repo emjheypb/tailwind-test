@@ -1,6 +1,7 @@
 "use client";
 import Logo from "@/components/Logo";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
@@ -59,6 +60,7 @@ const MenuSVG = () => (
 );
 
 const MobileNavbar = () => {
+  const pathname = usePathname();
   const [isMobileMenuHidden, setIsMobileMenuHidden] = useState(true);
 
   return (
@@ -79,7 +81,7 @@ const MobileNavbar = () => {
           <Link
             href={link.href}
             key={link.id}
-            className={`p-4`}
+            className={`p-4 ${pathname === link.href && "font-extrabold"}`}
             onClick={() => setIsMobileMenuHidden(true)}>
             <span>{link.name}</span>
           </Link>
