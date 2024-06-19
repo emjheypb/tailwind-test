@@ -68,14 +68,14 @@ const Home = () => {
       </div>
       <div className={`bg-white h-screen flex flex-col px-10 pt-28 gap-4`}>
         <div className="text-3xl">
-          Let's clone some home pages based on{" "}
+          Let&apos;s clone some home pages based on{" "}
           <Link
             href={
               "https://unbounce.com/landing-page-examples/best-landing-page-examples/"
             }
             className="text-blue-600 hover:font-extrabold"
             target="_blank">
-            unbounce's best landing page examples list
+            unbounce&apos;s best landing page examples list
           </Link>
         </div>
         {sites.map((site) => (
