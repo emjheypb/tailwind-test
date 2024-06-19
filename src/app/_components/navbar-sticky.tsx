@@ -28,15 +28,15 @@ const StickyNavbar = () => {
       {/* {y} */}
       <div
         className={`hidden md:flex px-5 transition duration-500 ${
-          isSticky ? "shadow-xl bg-transparent" : "shadow-none bg-gradient-to-b"
+          isSticky ? "shadow-xl bg-white/50" : "shadow-none bg-gradient-to-b"
         } to-transparent from-white/75 fixed min-w-full gap-2 items-center`}>
         <Logo />
         {menuItems.map((item) => (
           <Link
-            href={item.href}
+            href={item.local}
             key={item.id}
             className={`p-4 hover:font-bold ${
-              pathname === item.href && "font-extrabold"
+              pathname === item.local && "font-extrabold"
             }`}>
             <span>{item.name}</span>
           </Link>

@@ -1,5 +1,9 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { menuItems } from "./_components/custom-lists";
+
+const sites = menuItems.slice(1);
 
 const Home = () => {
   const banner1 = 700,
@@ -57,10 +61,31 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className={`bg-white h-screen flex flex-col px-10 pt-28`}>
-        <section className="border-2">Section 1</section>
-        <section className="border-2">Section 2</section>
-        <section className="border-2">Section 3</section>
+      <div className={`bg-white h-screen flex flex-col px-10 pt-28 gap-4`}>
+        <div className="text-3xl">
+          Let's clone some home pages based on{" "}
+          <Link
+            href={
+              "https://unbounce.com/landing-page-examples/best-landing-page-examples/"
+            }
+            className="text-blue-600 hover:font-extrabold"
+            target="_blank">
+            unbounce's best landing page examples list
+          </Link>
+        </div>
+        {sites.map((site) => (
+          <div key={site.id} className="pt-4 pl-4 flex flex-col">
+            <Link
+              href={site.href}
+              target="_blank"
+              className="hover:font-extrabold">
+              {site.name}
+            </Link>
+            <Link href={site.local} className="text-xl hover:font-extrabold">
+              {site.local}
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
