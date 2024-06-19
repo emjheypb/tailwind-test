@@ -1,8 +1,8 @@
 const Landing2 = () => {
   return (
-    <div>
+    <main>
       <div className="bg-green-300 h-96 min-w-full"></div>
-    </div>
+    </main>
   );
 };
 
