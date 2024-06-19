@@ -3,7 +3,7 @@ import Logo from "@/components/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { menuItems } from "./custom-lists";
+import { menuItems } from "../../components/custom-lists";
 
 const CloseSVG = () => (
   <svg
@@ -57,9 +57,9 @@ const MobileNavbar = () => {
         </div>
         {menuItems.map((item) => (
           <Link
-            href={item.href}
+            href={item.local}
             key={item.id}
-            className={`p-4 ${pathname === item.href && "font-extrabold"}`}
+            className={`p-4 ${pathname === item.local && "font-extrabold"}`}
             onClick={() => setIsMobileMenuHidden(true)}>
             <span>{item.name}</span>
           </Link>

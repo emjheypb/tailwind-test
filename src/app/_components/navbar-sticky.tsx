@@ -3,7 +3,7 @@ import Logo from "@/components/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { menuItems } from "./custom-lists";
+import { menuItems } from "../../components/custom-lists";
 
 const StickyNavbar = () => {
   const pathname = usePathname();

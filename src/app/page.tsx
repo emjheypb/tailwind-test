@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { menuItems } from "./_components/custom-lists";
+import { menuItems } from "../components/custom-lists";
+import { ImagePlaceholderSVG } from "@/components/images";
 
 const sites = menuItems.slice(1);
 
@@ -28,7 +29,7 @@ const Home = () => {
       <div className="relative h-[300vh] w-full -z-50">
         <div
           id="curtain"
-          className={`fixed h-screen transition w-screen duration-300 bg-blue-200 translate-x-[33vw] pt-32 px-4 ${
+          className={`fixed h-screen transition w-screen duration-300 bg-blue-200 translate-x-[33vw] pt-10 md:pt-32 px-4 ${
             y > banner1 && y < banner2
               ? "translate-x-[66.66vw]"
               : y > banner2
@@ -48,16 +49,20 @@ const Home = () => {
         <div
           id="content"
           className="fixed h-screen w-screen -z-10 flex text-center">
-          <div className={`bg-red-300 h-full flex-1 flex pt-32 justify-center`}>
+          <div
+            className={`bg-red-300 h-full flex-1 flex flex-col pt-10 md:pt-32 px-4 justify-start items-center gap-4`}>
             Ready
+            <ImagePlaceholderSVG width={undefined} height={undefined} />
           </div>
           <div
-            className={`bg-yellow-200 h-full flex-1 flex pt-32 justify-center`}>
+            className={`bg-yellow-200 h-full flex-1 flex flex-col pt-10 md:pt-32 px-4 justify-start items-center gap-4`}>
             Set
+            <ImagePlaceholderSVG width={undefined} height={undefined} />
           </div>
           <div
-            className={`bg-green-300 h-full flex-1 flex pt-32 justify-center`}>
+            className={`bg-green-300 h-full flex-1 flex flex-col pt-10 md:pt-32 px-4 justify-start items-center gap-4`}>
             Go!
+            <ImagePlaceholderSVG width={undefined} height={undefined} />
           </div>
         </div>
       </div>
