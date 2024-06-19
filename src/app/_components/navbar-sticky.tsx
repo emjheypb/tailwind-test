@@ -3,29 +3,7 @@ import Logo from "@/components/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-const links = [
-  {
-    id: "home",
-    name: "Home",
-    href: "/",
-  },
-  {
-    id: "landing1",
-    name: "Landing 1",
-    href: "/landing1",
-  },
-  {
-    id: "landing2",
-    name: "Landing 2",
-    href: "/landing2",
-  },
-  {
-    id: "landing3",
-    name: "Landing 3",
-    href: "/landing3",
-  },
-];
+import { menuItems } from "./custom-lists";
 
 const StickyNavbar = () => {
   const pathname = usePathname();
@@ -51,19 +29,16 @@ const StickyNavbar = () => {
       <div
         className={`hidden md:flex px-5 transition duration-500 ${
           isSticky ? "shadow-xl bg-transparent" : "shadow-none bg-gradient-to-b"
-        } to-transparent from-white/75 fixed min-w-full gap-2 items-center`}
-        onScroll={() => {
-          alert("SCROLL");
-        }}>
+        } to-transparent from-white/75 fixed min-w-full gap-2 items-center`}>
         <Logo />
-        {links.map((link) => (
+        {menuItems.map((item) => (
           <Link
-            href={link.href}
-            key={link.id}
+            href={item.href}
+            key={item.id}
             className={`p-4 hover:font-bold ${
-              pathname === link.href && "font-extrabold"
+              pathname === item.href && "font-extrabold"
             }`}>
-            <span>{link.name}</span>
+            <span>{item.name}</span>
           </Link>
         ))}
       </div>

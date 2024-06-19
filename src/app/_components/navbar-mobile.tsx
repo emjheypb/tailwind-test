@@ -3,29 +3,7 @@ import Logo from "@/components/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
-const links = [
-  {
-    id: "home",
-    name: "Home",
-    href: "/",
-  },
-  {
-    id: "landing1",
-    name: "Landing 1",
-    href: "/landing1",
-  },
-  {
-    id: "landing2",
-    name: "Landing 2",
-    href: "/landing2",
-  },
-  {
-    id: "landing3",
-    name: "Landing 3",
-    href: "/landing3",
-  },
-];
+import { menuItems } from "./custom-lists";
 
 const CloseSVG = () => (
   <svg
@@ -77,13 +55,13 @@ const MobileNavbar = () => {
         <div className="shadow-md pl-4">
           <Logo />
         </div>
-        {links.map((link) => (
+        {menuItems.map((item) => (
           <Link
-            href={link.href}
-            key={link.id}
-            className={`p-4 ${pathname === link.href && "font-extrabold"}`}
+            href={item.href}
+            key={item.id}
+            className={`p-4 ${pathname === item.href && "font-extrabold"}`}
             onClick={() => setIsMobileMenuHidden(true)}>
-            <span>{link.name}</span>
+            <span>{item.name}</span>
           </Link>
         ))}
       </nav>
