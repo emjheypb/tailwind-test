@@ -52,17 +52,17 @@ const Home = () => {
           <div
             className={`bg-red-300 h-full flex-1 flex flex-col pt-10 md:pt-32 px-4 justify-start items-center gap-4`}>
             Ready
-            <ImagePlaceholderSVG width={undefined} height={undefined} />
+            <ImagePlaceholderSVG />
           </div>
           <div
             className={`bg-yellow-200 h-full flex-1 flex flex-col pt-10 md:pt-32 px-4 justify-start items-center gap-4`}>
             Set
-            <ImagePlaceholderSVG width={undefined} height={undefined} />
+            <ImagePlaceholderSVG />
           </div>
           <div
             className={`bg-green-300 h-full flex-1 flex flex-col pt-10 md:pt-32 px-4 justify-start items-center gap-4`}>
             Go!
-            <ImagePlaceholderSVG width={undefined} height={undefined} />
+            <ImagePlaceholderSVG />
           </div>
         </div>
       </div>

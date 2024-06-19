@@ -1,4 +1,9 @@
-export const ImagePlaceholderSVG = ({ width, height }) => (
+interface Props {
+  width?: string;
+  height?: string;
+}
+
+export const ImagePlaceholderSVG = ({ width, height }: Props) => (
   <svg
     className={`${width || "w-auto"} ${
       height || "h-auto"
