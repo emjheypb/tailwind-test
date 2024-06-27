@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { menuItems } from "../../components/custom-lists";
+import EarlyAccessBtn from "@/components/early-access-btn";
 
 const StickyNavbar = () => {
   const pathname = usePathname();
@@ -41,6 +42,9 @@ const StickyNavbar = () => {
             <span>{item.name}</span>
           </Link>
         ))}
+        <div className="absolute right-4">
+          <EarlyAccessBtn />
+        </div>
       </div>
     </nav>
   );
