@@ -1,7 +1,7 @@
 import { NextApiRequest } from "next";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 type Payload = {
   email: string;
@@ -16,10 +16,11 @@ export async function POST(req: Request) {
     const { data, error } = await resend.contacts.create({
       email: request.email,
       unsubscribed: false,
-      audienceId: "b1225deb-a844-4d92-bcad-e0128f69fb90",
+      audienceId: process.env.RESEND_AUDIENCE_ID!,
     });
 
     if (error) {
+      console.log(error);
       return Response.json({ error }, { status: 500 });
     }
 
