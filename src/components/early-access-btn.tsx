@@ -23,11 +23,11 @@ const EarlyAccessBtn = () => {
       // Handle response if necessary
       const data = await response.json();
       // ...
-    } catch (error) {
+    } catch (err) {
       if (err instanceof Error) {
         // Capture the error message to display to the user
-        setError(error.message);
-        console.error(error);
+        setError(err.message);
+        console.error(err);
       }
     } finally {
       setIsLoading(false);
