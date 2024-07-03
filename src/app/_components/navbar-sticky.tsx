@@ -29,8 +29,9 @@ const StickyNavbar = () => {
       {/* {y} */}
       <div
         className={`hidden md:flex px-5 transition duration-500 ${
-          isSticky ? "shadow-xl bg-white/50" : "shadow-none bg-gradient-to-b"
-        } to-transparent from-white/75 fixed min-w-full gap-2 items-center`}>
+          isSticky ? "shadow-xl bg-white" : "shadow-none bg-gradient-to-b"
+        } to-transparent from-white/75 fixed min-w-full gap-2 items-center`}
+      >
         <Logo />
         {menuItems.map((item) => (
           <Link
@@ -38,13 +39,14 @@ const StickyNavbar = () => {
             key={item.id}
             className={`p-4 hover:font-bold ${
               pathname === item.local && "font-extrabold"
-            }`}>
+            }`}
+          >
             <span>{item.name}</span>
           </Link>
         ))}
-        <div className="absolute right-4">
+        {/* <div className="absolute right-4">
           <EarlyAccessBtn />
-        </div>
+        </div> */}
       </div>
     </nav>
   );
